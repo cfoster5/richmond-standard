@@ -1,18 +1,52 @@
 <ion-header>
   <ion-navbar>
-    <button ion-button menuToggle>
+    <button ion-button menuToggle="menu1">
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Home</ion-title>
+    <ion-title>
+      <img alt="logo" height="40" src="assets/imgs/logo-footer-1.png">
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button id="searchButton" menuToggle="menu2" (click)="search()">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <h3>Ionic Menu Starter</h3>
 
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
+  <div class="trending">Trending Now</div>
+  <span class="fadeInRight animated_xlong">{{trendingItems[0]}}<br></span>
+  <!-- <span class="fadeInRight animated_xlong" *ngFor="let item of trendingItems;">{{item}}<br></span> -->
 
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+  <ion-grid>
+    <ion-row style="display: table-row; border-bottom: 1px solid #ccc">
+      <ion-col style="display: table-cell">
+        <h4 class="recentNews">Recent News</h4>
+      </ion-col>
+      <ion-col style="display: table-cell">
+      </ion-col>
+      <ion-col style="display: table-cell">
+        <ion-item class="moreSelect" no-lines>
+          <ion-label class="customSelect">More</ion-label>
+          <ion-select [(ngModel)]="option" (ionChange)="getdata()"interface="popover" style="padding:10px; max-width: none">
+            <ion-option value="Recent">Recent</ion-option>
+            <ion-option value="Richmond">Richmond</ion-option>
+            <ion-option value="Education">Education</ion-option>
+            <ion-option value="Bizboost">Biz Boost</ion-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <div *ngFor = "let article of articles" (click)="viewArticle(article)">
+  <img src="{{article.img}}" class="articleImg">
+  <span style="position: relative; top: -16px; left: 39px; font-size: 11px; background-color: black; color: white; font-weight: 600;">{{article.category}}</span>
+  <h3 style="margin-top: 0px;">{{article.title}}</h3>
+  <span>{{article.date | date:'longDate'}}</span>
+  <span *ngIf="article.body" class="articleExcerpt" innerHtml="{{article.body.substr(0, 120)}}..."></span>
+  </div>
+
 </ion-content>

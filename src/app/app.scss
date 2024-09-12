@@ -14,3 +14,159 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+.toolbar-background {
+  background-color: #222;
+}
+
+.bar-button-default {
+  color: white;
+}
+
+.toolbar {
+  height: 54px;
+}
+
+.toolbar img {
+  vertical-align: middle
+}
+
+#searchButton {
+  margin: 0 6px;
+  padding: 0;
+  -webkit-box-ordinal-group: 2;
+  -webkit-order: 1;
+  -ms-flex-order: 1;
+  order: 1;
+  min-width: 36px;
+}
+
+#searchButton ion-icon {
+  padding: 0 6px;
+  font-size: 2.8rem;
+}
+
+ion-menu {
+  ion-content {
+    background: rgba(69,132,112,0.85) !important;
+    background: -moz-linear-gradient(top, rgba(69,132,112,0.85) 0%, rgba(18,129,153,0.85) 100%) !important;
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(69,132,112,0.85)), color-stop(100%, rgba(18,129,153,0.85))) !important;
+    background: -webkit-linear-gradient(top, rgba(69,132,112,0.85) 0%, rgba(18,129,153,0.85) 100%) !important;
+    // background: -o-linear-gradient(top, rgba(69,132,112,0.85) 0%, @mobileu_gradient_two_mob 100%);
+    background: -ms-linear-gradient(top, rgba(69,132,112,0.85) 0%, rgba(18,129,153,0.85) 100%) !important;
+    background: linear-gradient(to bottom, rgba(69,132,112,0.85) 0%, rgba(18,129,153,0.85) 100%) !important;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgba(69,132,112,0.85)', endColorstr='rgba(18,129,153,0.85)', GradientType=0 ) !important;
+  }
+  .item {
+    background: transparent;
+    color: white;
+    border: 0px !important;
+  }
+  ion-list {
+    padding: 20px;
+  }
+  ion-label {
+    font-size: 21px;
+    line-height: 21px;
+    font-weight: bold;
+  }
+
+  .item-inner {
+    border: 0px !important;
+  }
+}
+
+#menu1 .item-ios {
+  .item-inner {
+    background-image: url("data:image/svg+xml;charset=utf-8,<svg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2012%2020'><path%20d='M2,20l-2-2l8-8L0,2l2-2l10,10L2,20z'%20fill='white'/></svg>") !important;
+  }
+}
+
+#menu2 ion-input {
+  border-bottom: 1px solid white;
+  font-weight: bold;
+  font-size: 26px;
+  caret-color: white;
+  input {
+    text-align: center;
+  }
+}
+
+#menu2 ion-label {
+  margin: auto;
+  margin-top: 20px;
+  color: white;
+  // overflow: visible;
+  overflow: hidden;
+}
+
+/* The animation code */
+@keyframes example {
+  from {width: 0px; opacity: .2}
+  to {width: 100%; opacity: 1}
+}
+
+/* The element to apply the animation to */
+#menu2 ion-input {
+  width: 0px;
+  opacity: .2;
+  animation-name: example;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards; // REVIEW: ELIMINATES RESET AFTER ANIMATION FINISHES
+}
+
+#menu2 ion-item:last-child { // REVIEW: KEEP IF NOT USING ION-LIST
+  padding-bottom: 20px;
+  margin-bottom: 32px;
+}
+
+
+
+
+
+
+// .td-search-opened {
+//   position: relative;
+// }
+// .td-search-opened #wpadminbar {
+//   position: fixed !important;
+// }
+//
+// .td-search-opened #td-outer-wrap {
+//   position: fixed;
+//   transform: scale3d(0.9, 0.9, 0.9);
+//   -webkit-transform: scale3d(0.9, 0.9, 0.9);
+//   -moz-transform: scale3d(0.9, 0.9, 0.9);
+//   -ms-transform: scale3d(0.9, 0.9, 0.9);
+//   -o-transform: scale3d(0.9, 0.9, 0.9);
+//   -webkit-box-shadow: 0 0 46px;
+//   -moz-box-shadow: 0 0 46px;
+//   box-shadow: 0 0 46px;
+// }
+//
+// .td-search-opened .td-search-wrap-mob .td-drop-down-search {
+//   opacity: 1;
+//   visibility: visible;
+//   -webkit-transition: all 0.5s ease 0.3s;
+//   -moz-transition: all 0.5s ease 0.3s;
+//   -o-transition: all 0.5s ease 0.3s;
+//   transition: all 0.5s ease 0.3s;
+// }
+// .td-search-opened .td-search-background {
+//   transform: translate3d(0, 0, 0);
+//   -webkit-transform: translate3d(0, 0, 0);
+//   -moz-transform: translate3d(0, 0, 0);
+//   -ms-transform: translate3d(0, 0, 0);
+//   -o-transform: translate3d(0, 0, 0);
+//   visibility: visible;
+// }
+// .td-search-opened .td-search-input:after {
+//   transform: scaleX(1);
+//   -webkit-transform: scaleX(1);
+//   -moz-transform: scaleX(1);
+//   -ms-transform: scaleX(1);
+//   -o-transform: scaleX(1);
+// }
+// .td-search-opened.admin-bar .td-search-wrap-mob {
+//   padding-top: 0;
+// }

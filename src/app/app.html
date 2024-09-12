@@ -1,7 +1,15 @@
-<ion-menu [content]="content">
+<ion-menu [content]="content" type="overlay" id="menu1">
   <ion-header>
     <ion-toolbar>
-      <ion-title>Menu</ion-title>
+      <ion-title>
+        <img alt="logo" height="40" src="assets/imgs/logo-footer-1.png">
+      </ion-title>
+      <!-- REVIEW: Added button to close menu if menu width is full screen -->
+      <ion-buttons end>
+        <button ion-button menuToggle="menu1">
+          <ion-icon style="font-size: 3.5rem;" name="close"></ion-icon>
+        </button>
+      </ion-buttons>
     </ion-toolbar>
   </ion-header>
 
@@ -11,6 +19,52 @@
         {{p.title}}
       </button>
     </ion-list>
+  </ion-content>
+
+</ion-menu>
+
+<ion-menu [content]="content" type="overlay" id="menu2" side="right">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>
+        <img alt="logo" height="40" src="assets/imgs/logo-footer-1.png">
+      </ion-title>
+      <!-- REVIEW: Added button to close menu if menu width is full screen -->
+      <ion-buttons end>
+        <button ion-button menuToggle="menu2">
+          <ion-icon style="font-size: 3.5rem;" name="close"></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-item>
+      <ion-label stacked>Search</ion-label>
+      <ion-input type="text" (input)="getItems($event)"></ion-input>
+    </ion-item>
+
+    <!-- <ion-list> -->
+    <!-- <ion-item *ngFor="let item of items" (click)="test(item)">
+      {{item}}
+    </ion-item> -->
+  <!-- </ion-list> -->
+
+  <ion-list>
+  <ion-item *ngFor="let item of items" (click)="viewArticle(item)" menuToggle="menu2" style="padding-left: 0px;">
+  <!-- <ion-item *ngFor="let item of items" (click)="test(item)" style="padding-left: 0px;"> -->
+    <!-- <div style="overflow: hidden; text-overflow: ellipsis;"> -->
+      <ion-thumbnail item-start>
+        <img src="{{item.img}}" style="width: 80px !important; height: 60px !important;">
+      </ion-thumbnail>
+      <span style="font-size: 16px; white-space: normal;">{{item.title}}</span><br>
+      <span style="font-size: 11px; background-color: black; padding: 2px; font-weight: 600;">{{item.category}}</span>
+      <span style="font-size: 11px; font-weight: 600;">{{item.date | date:'longDate'}}</span>
+    <!-- </div> -->
+  </ion-item>
+</ion-list>
+
+
   </ion-content>
 
 </ion-menu>

@@ -1,0 +1,37 @@
+page-article {
+
+  h1 {
+    -webkit-font-smoothing: antialiased;
+    box-sizing: border-box;
+    color: rgb(17, 17, 17);
+    display: block;
+    font-family: Roboto, sans-serif;
+    font-size: 32px;
+    font-weight: normal;
+    height: 108px;
+    line-height: 36px;
+    margin: 3px 0 9px;
+    visibility: visible;
+    width: 354px;
+    word-wrap: break-word;
+  }
+
+  .articleImg {
+    display: block;
+    margin: 15px auto auto;
+  }
+
+  .articleBody {
+    font-size: 15px;
+    line-height: 26px;
+    font-family: Verdana, Geneva, sans-serif;
+    p {
+      margin-bottom: 26px;
+    }
+  }
+
+  image-viewer.ion-page ion-navbar.toolbar.toolbar-ios {
+    padding-top: 0px;
+}
+
+}

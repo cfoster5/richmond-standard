@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      <img alt="logo" height="40" src="assets/imgs/logo-footer-1.png">
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding *ngFor = "let article of article">
+  <h1>{{article.title}}</h1>
+  <span>{{article.date | date:'longDate'}}</span>
+  <img src="{{article.img}}" class="articleImg" imageViewer (click)="imageOpen()" (close)="imageClose()">
+  <span [innerHtml]="article.body" class="articleBody"></span>
+</ion-content>
